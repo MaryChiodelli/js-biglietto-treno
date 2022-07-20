@@ -15,9 +15,9 @@ const prezzoBigliettoOver65 = prezzoBiglietto * (1 - scontoOver65);
 console.log(prezzoBiglietto, prezzoBigliettoMinorenni, prezzoBigliettoOver65);
 
 if (eta < 18) {
-    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoMinorenni;
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoMinorenni.toFixed(2) + '€';
 } else if (eta > 65) {
-    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoOver65;
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoOver65.toFixed(2) + '€';
 } else {
-    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBiglietto;
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBiglietto.toFixed(2) + '€';
 }
