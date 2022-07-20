@@ -8,8 +8,16 @@ console.log(chilometri, eta);
 const prezzoBiglietto = chilometri * 0.21;
 // va applicato uno sconto del 20% per i minorenni
 const scontoMinorenni = 0.2;
-const prezzoBigliettoMinorenni = prezzoBiglietto * (1 - 0.2);
+const prezzoBigliettoMinorenni = prezzoBiglietto * (1 - scontoMinorenni);
 // va applicato uno sconto del 40% per gli over 65.
 const scontoOver65 = 0.4;
-const prezzoBigliettoOver65 = prezzoBiglietto * (1 - 0.4);
+const prezzoBigliettoOver65 = prezzoBiglietto * (1 - scontoOver65);
 console.log(prezzoBiglietto, prezzoBigliettoMinorenni, prezzoBigliettoOver65);
+
+if (eta < 18) {
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoMinorenni;
+} else if (eta > 65) {
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBigliettoOver65;
+} else {
+    document.getElementById('titolo').innerHTML = 'Il tuo biglietto costa ' + prezzoBiglietto;
+}
